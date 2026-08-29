@@ -1,15 +1,12 @@
 /**
  * COEP Impressions '26 — Coming Soon Page
- * Interactive 3D Cursor Physics, Theatrical Props Parallax & Audio Synthesizer
+ * Interactive 3D Cursor Physics & Theatrical Props Parallax
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements
   const ticketScene = document.getElementById('ticket3dScene');
   const ticketCard = document.getElementById('ticketCard');
-  const audioToggleBtn = document.getElementById('audioToggleBtn');
-  const soundIcon = document.getElementById('soundIcon');
-  const soundLabel = document.getElementById('soundLabel');
   const cinemaToast = document.getElementById('cinemaToast');
   const stagePropsLayer = document.getElementById('stagePropsLayer');
 
@@ -117,108 +114,5 @@ document.addEventListener('DOMContentLoaded', () => {
     toastTimer = setTimeout(() => {
       cinemaToast.classList.remove('show');
     }, 2800);
-  }
-
-  /* --------------------------------------------------------------------------
-     3. Retro Web Audio API Projector Synthesizer
-     -------------------------------------------------------------------------- */
-  let audioCtx = null;
-  let isSoundActive = false;
-  let projectorHumNode = null;
-  let projectorGainNode = null;
-
-  function initAudioContext() {
-    if (!audioCtx) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (AudioContextClass) {
-        audioCtx = new AudioContextClass();
-      }
-    }
-    if (audioCtx && audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-  }
-
-  function startProjectorHum() {
-    initAudioContext();
-    if (!audioCtx) return;
-
-    try {
-      const bufferSize = audioCtx.sampleRate * 2;
-      const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-      const output = noiseBuffer.getChannelData(0);
-
-      for (let i = 0; i < bufferSize; i++) {
-        output[i] = (Math.random() * 2 - 1) * 0.08;
-      }
-
-      projectorHumNode = audioCtx.createBufferSource();
-      projectorHumNode.buffer = noiseBuffer;
-      projectorHumNode.loop = true;
-
-      const filter = audioCtx.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(280, audioCtx.currentTime);
-
-      projectorGainNode = audioCtx.createGain();
-      projectorGainNode.gain.setValueAtTime(0.01, audioCtx.currentTime);
-      projectorGainNode.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + 1);
-
-      projectorHumNode.connect(filter);
-      filter.connect(projectorGainNode);
-      projectorGainNode.connect(audioCtx.destination);
-
-      projectorHumNode.start();
-    } catch (e) {}
-  }
-
-  function stopProjectorHum() {
-    if (projectorGainNode && audioCtx) {
-      try {
-        projectorGainNode.gain.linearRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
-        setTimeout(() => {
-          if (projectorHumNode) {
-            projectorHumNode.stop();
-            projectorHumNode = null;
-          }
-        }, 450);
-      } catch (e) {}
-    }
-  }
-
-  if (audioToggleBtn) {
-    audioToggleBtn.addEventListener('click', () => {
-      initAudioContext();
-      isSoundActive = !isSoundActive;
-
-      if (isSoundActive) {
-        audioToggleBtn.classList.add('active');
-        if (soundLabel) soundLabel.textContent = 'SOUND ON';
-        if (soundIcon) {
-          soundIcon.innerHTML = `
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-            </svg>
-          `;
-        }
-        startProjectorHum();
-        showToast('🎬 Vintage Cinema Audio Enabled');
-      } else {
-        audioToggleBtn.classList.remove('active');
-        if (soundLabel) soundLabel.textContent = 'SOUND OFF';
-        if (soundIcon) {
-          soundIcon.innerHTML = `
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-              <line x1="23" y1="9" x2="17" y2="15"></line>
-              <line x1="17" y1="9" x2="23" y2="15"></line>
-            </svg>
-          `;
-        }
-        stopProjectorHum();
-        showToast('Audio Muted');
-      }
-    });
   }
 });
