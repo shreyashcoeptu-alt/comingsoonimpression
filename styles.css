@@ -1,0 +1,1185 @@
+/* ==========================================================================
+   COEP IMPRESSIONS '26 — COMING SOON PAGE STYLESHEET
+   Aesthetics: Vintage Retro Bollywood Cinema Poster & Theatrical Event Pass
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Custom Font Declarations
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Dinosic';
+  src: url('fonts/Dinosic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anorthic';
+  src: url('fonts/anorthic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move';
+  src: url('fonts/UberMove-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move';
+  src: url('fonts/UberMove-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move';
+  src: url('fonts/UberMove-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move Text';
+  src: url('fonts/UberMoveText-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Uber Move Text';
+  src: url('fonts/UberMoveText-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --------------------------------------------------------------------------
+   Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Vintage Bollywood Cinema Color Palette */
+  --crimson-base: #86131A;
+  --crimson-dark: #4F080C;
+  --crimson-deepest: #2B0305;
+  --curtain-maroon: #680E14;
+  --vermilion-bright: #D8282B;
+  
+  /* Golden Accents */
+  --gold-bright: #FBD34D;
+  --gold-gold: #E5A823;
+  --gold-dark: #A86F0E;
+  --gold-glow: rgba(251, 211, 77, 0.45);
+  
+  /* Vintage Parchment & Stamped Paper */
+  --parchment-pure: #FFFBF0;
+  --parchment-cream: #F5E8CB;
+  --parchment-dark: #E2CF9F;
+  --card-shadow: rgba(18, 2, 4, 0.75);
+  
+  /* Vintage Ink Charcoal */
+  --ink-charcoal: #18090A;
+  --ink-soft: #381E21;
+  --ink-muted: #6B4E51;
+
+  /* Typography Stacks */
+  --font-dinosic: 'Dinosic', 'Anton', 'Cinzel', Impact, sans-serif;
+  --font-anorthic: 'Anorthic', 'Special Elite', 'Courier Prime', cursive;
+  --font-display: 'Rozha One', 'Rye', 'Playfair Display', serif;
+  --font-script: 'Instrument Serif', Georgia, serif;
+  --font-slab: 'Roboto Slab', 'Rozha One', Georgia, serif;
+  --font-sans: 'Uber Move', 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-text: 'Uber Move Text', 'Inter', sans-serif;
+
+  /* Elevations & Shadows */
+  --ticket-hard-shadow: 0 24px 60px rgba(0, 0, 0, 0.8), 0 6px 16px rgba(43, 3, 5, 0.7);
+  --gold-drop-shadow: 0 0 16px rgba(251, 211, 77, 0.4);
+  --theatrical-glow: 0 0 45px rgba(232, 40, 43, 0.35);
+
+  /* Easing Curves */
+  --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --------------------------------------------------------------------------
+   CSS Reset & Base Rules
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--crimson-deepest);
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-text);
+  color: var(--parchment-cream);
+  background-color: #7A0F15;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(166, 27, 35, 0.45) 0%, rgba(35, 3, 5, 0.85) 100%),
+    url('assets/bg-bollywood-poster.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --------------------------------------------------------------------------
+   Vintage Cinema Atmospheric Overlays
+   -------------------------------------------------------------------------- */
+.vintage-grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.projector-beam-overlay {
+  position: fixed;
+  top: -20%;
+  left: 20%;
+  width: 60%;
+  height: 140%;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(ellipse 50% 60% at 50% 30%, rgba(255, 235, 175, 0.08) 0%, transparent 70%);
+  transform: rotate(-10deg);
+  opacity: 0.8;
+  animation: projectorFlicker 6s ease-in-out infinite alternate;
+}
+
+@keyframes projectorFlicker {
+  0%, 100% { opacity: 0.75; transform: rotate(-10deg) scale(1); }
+  25% { opacity: 0.9; transform: rotate(-9.5deg) scale(1.02); }
+  50% { opacity: 0.65; transform: rotate(-10.5deg) scale(0.98); }
+  75% { opacity: 0.85; transform: rotate(-10deg) scale(1.01); }
+}
+
+.vignette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11;
+  background: radial-gradient(circle at center, transparent 40%, rgba(20, 2, 4, 0.7) 95%);
+}
+
+/* Floating Projector Dust Particles */
+.floating-dust-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold-bright);
+  opacity: 0.4;
+  filter: blur(0.5px);
+  animation: floatDust 12s linear infinite;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.p1 { top: 20%; left: 15%; animation-duration: 14s; }
+.p2 { top: 65%; left: 80%; animation-duration: 18s; animation-delay: -4s; }
+.p3 { top: 40%; left: 85%; animation-duration: 16s; animation-delay: -7s; }
+.p4 { top: 80%; left: 25%; animation-duration: 20s; animation-delay: -2s; }
+
+@keyframes floatDust {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.4; }
+  100% { transform: translateY(-160px) translateX(40px); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Flowing Film Tape Ribbons (Passing across top & framing edges)
+   -------------------------------------------------------------------------- */
+/* Top Film Ribbon Passing Across the Top of the Webpage */
+.film-tape-top-wrapper {
+  position: absolute;
+  top: -15px;
+  left: -2%;
+  width: 104%;
+  max-height: 220px;
+  pointer-events: none;
+  z-index: 18;
+  overflow: visible;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.8));
+  animation: gentleSwayTop 8s ease-in-out infinite alternate;
+}
+
+.film-tape-top-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center top;
+}
+
+/* Right Flank Curving Film Tape */
+.film-tape-right-wrapper {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: clamp(180px, 22vw, 320px);
+  height: auto;
+  pointer-events: none;
+  z-index: 16;
+  filter: drop-shadow(-8px 10px 18px rgba(0, 0, 0, 0.75));
+  animation: gentleSwayRight 9s ease-in-out infinite alternate;
+}
+
+.film-tape-right-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Bottom Flank Curving Film Tape */
+.film-tape-bottom-wrapper {
+  position: absolute;
+  bottom: -20px;
+  left: -40px;
+  width: clamp(260px, 34vw, 520px);
+  height: auto;
+  pointer-events: none;
+  z-index: 16;
+  filter: drop-shadow(6px -10px 18px rgba(0, 0, 0, 0.75));
+  animation: gentleSwayBottom 10s ease-in-out infinite alternate;
+}
+
+.film-tape-bottom-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes gentleSwayTop {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(6px) rotate(0.4deg); }
+}
+
+@keyframes gentleSwayRight {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-8px) scale(1.02); }
+}
+
+@keyframes gentleSwayBottom {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(6px) scale(1.02); }
+}
+
+/* --------------------------------------------------------------------------
+   Theatrical Props Layer (Megaphones, Mics, Cameras on Left & Right)
+   -------------------------------------------------------------------------- */
+.cinema-props-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 22;
+  overflow: hidden;
+}
+
+.stage-prop {
+  position: absolute;
+  pointer-events: auto;
+  transition: transform 0.4s var(--ease-elastic);
+  cursor: default;
+}
+
+.stage-prop:hover {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.prop-svg-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.75));
+}
+
+/* 1. Left Side: Handheld Megaphone with Sound Waves (Top-Left Flank) */
+.prop-megaphone-left {
+  top: 14%;
+  left: max(12px, calc(50% - 590px));
+  width: clamp(140px, 17vw, 240px);
+  animation: propFloatLeft 6s ease-in-out infinite alternate;
+}
+
+/* 2. Left Side: Vintage Studio Broadcast Microphone (Lower-Left Flank) */
+.prop-mic-left {
+  bottom: 8%;
+  left: max(20px, calc(50% - 570px));
+  width: clamp(90px, 11vw, 150px);
+  animation: propFloatLeft 7.5s ease-in-out infinite alternate 1s;
+}
+
+/* 3. Right Side: Vintage Loudspeaker Horn with Lightning (Top-Right Flank) */
+.prop-speaker-right {
+  top: 13%;
+  right: max(15px, calc(50% - 590px));
+  width: clamp(140px, 17vw, 240px);
+  animation: propFloatRight 6.5s ease-in-out infinite alternate 0.5s;
+}
+
+/* 4. Right Side: Vintage 35mm Movie Camera on Tripod (Lower-Right Flank) */
+.prop-camera-right {
+  bottom: 6%;
+  right: max(25px, calc(50% - 560px));
+  width: clamp(110px, 13vw, 180px);
+  animation: propFloatRight 8s ease-in-out infinite alternate 1.5s;
+}
+
+@keyframes propFloatLeft {
+  0% { transform: translateY(0px) rotate(-2deg); }
+  100% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes propFloatRight {
+  0% { transform: translateY(0px) rotate(2deg); }
+  100% { transform: translateY(-12px) rotate(-2deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Cinema Proscenium Header
+   -------------------------------------------------------------------------- */
+.cinema-header {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  padding: 1.25rem 2rem 0.5rem;
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+.ctrl-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(30, 4, 6, 0.85);
+  border: 1.5px solid rgba(251, 211, 77, 0.4);
+  color: var(--parchment-cream);
+  padding: 0.4rem 0.85rem;
+  border-radius: 20px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-cinema);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.ctrl-btn:hover {
+  border-color: var(--gold-bright);
+  color: var(--gold-bright);
+  box-shadow: 0 0 14px var(--gold-glow);
+  transform: translateY(-1px);
+}
+
+.ctrl-btn.active {
+  background: var(--gold-gold);
+  color: var(--ink-charcoal);
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 16px var(--gold-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Hero Stage & Centerpiece
+   -------------------------------------------------------------------------- */
+.hero-stage {
+  position: relative;
+  z-index: 25;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1.5rem 2rem;
+}
+
+.stage-container {
+  width: 100%;
+  max-width: 880px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   3D Ticket Scene & Card Mechanics (Original Full Dimensions)
+   -------------------------------------------------------------------------- */
+.ticket-3d-scene {
+  perspective: 1400px;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ticket-card-3d {
+  position: relative;
+  width: 100%;
+  min-height: 410px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s var(--ease-elastic);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--ticket-hard-shadow);
+  border: 4px solid #1E0709;
+  background: #F8ECD2;
+}
+
+/* Individual Ticket Face */
+.ticket-face {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.25), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(217, 164, 65, 0.15), transparent 50%),
+    linear-gradient(135deg, #FAF1DE 0%, #F3E2C0 50%, #EBD4A8 100%);
+  position: relative;
+}
+
+/* Realistic Semicircular Perforation Notches */
+.notch {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  background: #761016;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  border: 4px solid #1E0709;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.notch-left {
+  left: -18px;
+}
+
+.notch-right {
+  right: -18px;
+}
+
+/* --------------------------------------------------------------------------
+   Ticket Layout: Main Body + Admit Stub
+   -------------------------------------------------------------------------- */
+.ticket-layout {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  height: 100%;
+  min-height: 410px;
+}
+
+/* Main Left Section of Ticket */
+.ticket-main-section {
+  flex: 1 1 70%;
+  padding: 1.5rem 1.75rem 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.ticket-crest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(36, 15, 18, 0.15);
+  padding-bottom: 0.65rem;
+}
+
+.crest-side {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.ticket-crest-logo {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.crest-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.uni-name-slab {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--ink-charcoal);
+  line-height: 1.15;
+}
+
+/* Filmstrip Accent Ribbon */
+.filmstrip-accent-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1B0608;
+  color: var(--gold-bright);
+  padding: 0.28rem 0.6rem;
+  margin: 0.65rem 0 0.5rem;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+.sprocket-track {
+  display: flex;
+  gap: 4px;
+}
+
+.sprocket {
+  width: 5px;
+  height: 5px;
+  background: var(--parchment-cream);
+  border-radius: 1px;
+}
+
+.filmstrip-label {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--gold-bright);
+  text-transform: uppercase;
+}
+
+/* Hero Title Block */
+.ticket-title-block {
+  text-align: left;
+  margin: 0.25rem 0 0.65rem;
+}
+
+.ticket-hero-title {
+  font-family: var(--font-dinosic) !important;
+  font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+  font-weight: normal;
+  line-height: 0.95;
+  letter-spacing: 0.04em;
+  color: var(--crimson-dark);
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  text-shadow: 2px 2px 0px var(--parchment-pure), 4px 4px 0px rgba(36, 15, 18, 0.4);
+}
+
+.hero-wordmark {
+  color: #831218;
+}
+
+.hero-year-tag {
+  color: var(--gold-dark);
+  margin-left: 0.25rem;
+}
+
+.ticket-hero-tagline {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  color: var(--ink-soft);
+  margin-top: 0.15rem;
+  letter-spacing: 0.04em;
+}
+
+/* Dashed Data Details Grid */
+.ticket-data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.45rem 1rem;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1.5px dashed rgba(43, 3, 5, 0.35);
+  padding: 0.55rem 0.85rem;
+  border-radius: 6px;
+  margin-bottom: 0.65rem;
+}
+
+.data-cell {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.cell-label {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--crimson-dark);
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.cell-value {
+  font-family: var(--font-text);
+  font-weight: 700;
+  color: var(--ink-charcoal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cell-value.date-highlight {
+  color: #9C161D;
+  font-weight: 800;
+}
+
+/* Status Footer inside Ticket (Looping Film Reel + Coming Soon) */
+.ticket-status-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: #1E0709;
+  border-radius: 8px;
+  padding: 0.5rem 0.85rem;
+  border: 1.5px solid var(--gold-gold);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.coming-soon-reel-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Looping Film Reel Sprocket Animation */
+.film-reel-spinner {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  animation: spinReel 5s linear infinite;
+  filter: drop-shadow(0 0 6px var(--gold-glow));
+}
+
+.reel-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes spinReel {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.status-text-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-pill-badge {
+  font-family: var(--font-sans);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--gold-bright);
+}
+
+.coming-soon-text {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  color: var(--parchment-pure);
+  text-shadow: 0 0 10px rgba(251, 211, 77, 0.6);
+  line-height: 1.05;
+}
+
+/* --------------------------------------------------------------------------
+   Perforation Tear Line & Divider
+   -------------------------------------------------------------------------- */
+.ticket-perforation-divider {
+  position: relative;
+  width: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.perforation-dashed-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-left: 2.5px dashed rgba(43, 3, 5, 0.4);
+}
+
+.perforation-scissors {
+  position: relative;
+  z-index: 5;
+  background: #F4E3C1;
+  color: var(--crimson-dark);
+  font-size: 0.85rem;
+  padding: 2px;
+  transform: rotate(90deg);
+}
+
+/* --------------------------------------------------------------------------
+   Admit One Stub Section (Right Side)
+   -------------------------------------------------------------------------- */
+.ticket-stub-section {
+  flex: 0 0 28%;
+  background: linear-gradient(135deg, #F5E5C6 0%, #ECD5A5 100%);
+  padding: 1.25rem 1.25rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+}
+
+.stub-header {
+  border-bottom: 2px solid rgba(43, 3, 5, 0.2);
+  padding-bottom: 0.35rem;
+}
+
+.stub-stars {
+  font-size: 0.65rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.2em;
+}
+
+.stub-admit-text {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--crimson-dark);
+  line-height: 1.1;
+}
+
+.stub-edition-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--crimson-dark);
+  color: var(--parchment-pure);
+  padding: 0.25rem;
+  border-radius: 4px;
+  margin: 0.35rem 0;
+}
+
+.stub-box-title {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.stub-box-num {
+  font-family: var(--font-dinosic);
+  font-size: 0.95rem;
+  color: var(--gold-bright);
+}
+
+/* Impressions Logo in Stub */
+.stub-logo-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.35rem 0;
+  padding: 0.15rem 0;
+}
+
+.stub-impressions-logo {
+  width: 100%;
+  max-width: 135px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.stub-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed rgba(43, 3, 5, 0.3);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.stub-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  font-family: var(--font-sans);
+}
+
+.s-k {
+  font-weight: 800;
+  color: var(--crimson-dark);
+}
+
+.s-v {
+  font-weight: 700;
+  color: var(--ink-charcoal);
+}
+
+.stub-date-stamp {
+  margin-top: 0.3rem;
+  border: 1.5px solid #841117;
+  padding: 0.2rem;
+  border-radius: 3px;
+  background: rgba(132, 17, 23, 0.08);
+}
+
+.stamp-lbl {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.52rem;
+  font-weight: 800;
+  color: var(--crimson-dark);
+  letter-spacing: 0.12em;
+}
+
+.stamp-val {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 900;
+  color: #841117;
+  letter-spacing: 0.1em;
+}
+
+/* --------------------------------------------------------------------------
+   Specular Sheen Glare Effect on 3D Tilt
+   -------------------------------------------------------------------------- */
+.ticket-sheen-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(circle 320px at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255, 255, 255, 0.35) 0%, transparent 80%);
+  opacity: var(--glare-opacity, 0);
+  transition: opacity 0.3s ease;
+  z-index: 30;
+}
+
+/* --------------------------------------------------------------------------
+   Cinema Footer
+   -------------------------------------------------------------------------- */
+.cinema-footer {
+  position: relative;
+  z-index: 30;
+  width: 100%;
+  background: rgba(18, 3, 5, 0.95);
+  padding: 1.25rem 2rem;
+  border-top: 1px solid rgba(251, 211, 77, 0.2);
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-emblem-img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+.footer-copy-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-title {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--parchment-pure);
+}
+
+.f-sub {
+  font-family: var(--font-text);
+  font-size: 0.68rem;
+  color: var(--parchment-dark);
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.social-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  background: rgba(43, 3, 5, 0.8);
+  border: 1px solid rgba(251, 211, 77, 0.35);
+  color: var(--parchment-cream);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  transition: all 0.22s ease;
+}
+
+.social-badge:hover {
+  background: var(--gold-bright);
+  color: var(--ink-charcoal);
+  border-color: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--gold-bright);
+}
+
+/* --------------------------------------------------------------------------
+   Cinema Toast Notification
+   -------------------------------------------------------------------------- */
+.cinema-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #180507;
+  color: var(--parchment-pure);
+  border: 2px solid var(--gold-bright);
+  padding: 0.85rem 1.5rem;
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 20px var(--gold-glow);
+  z-index: 200;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.3s var(--ease-cinema);
+}
+
+.cinema-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .prop-megaphone-left {
+    left: 10px;
+    width: 160px;
+  }
+  .prop-speaker-right {
+    right: 10px;
+    width: 160px;
+  }
+  .prop-mic-left {
+    left: 15px;
+    width: 100px;
+  }
+  .prop-camera-right {
+    right: 15px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ticket-card-3d {
+    min-height: 440px;
+  }
+
+  .ticket-hero-title {
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+  }
+
+  .prop-megaphone-left {
+    top: 8%;
+    left: 5px;
+    width: 120px;
+    opacity: 0.8;
+  }
+
+  .prop-speaker-right {
+    top: 8%;
+    right: 5px;
+    width: 120px;
+    opacity: 0.8;
+  }
+
+  .prop-mic-left,
+  .prop-camera-right {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinema-header {
+    padding: 1rem 1rem 0.25rem;
+  }
+
+  .ticket-layout {
+    flex-direction: column;
+  }
+
+  .ticket-main-section {
+    flex: 1 1 auto;
+    padding: 1.25rem 1.25rem 0.75rem;
+  }
+
+  .ticket-stub-section {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-top: 2px dashed rgba(43, 3, 5, 0.35);
+  }
+
+  .ticket-perforation-divider {
+    display: none;
+  }
+
+  .stub-fields,
+  .stub-date-stamp,
+  .stub-stars {
+    display: none;
+  }
+
+  .stub-logo-block {
+    flex: 1;
+    max-width: 140px;
+    margin: 0;
+  }
+
+  .ticket-card-3d {
+    min-height: 480px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.85rem;
+  }
+
+  .prop-megaphone-left,
+  .prop-speaker-right {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ticket-card-3d {
+    min-height: 520px;
+  }
+
+  .ticket-hero-title {
+    font-size: 2.2rem;
+  }
+
+  .ticket-data-grid {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .coming-soon-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced Motion Accessibility Fallback
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .ticket-card-3d {
+    transition: none !important;
+  }
+
+  .film-reel-spinner {
+    animation: none !important;
+  }
+
+  .film-tape-top-wrapper,
+  .film-tape-right-wrapper,
+  .film-tape-bottom-wrapper,
+  .stage-prop {
+    animation: none !important;
+  }
+}

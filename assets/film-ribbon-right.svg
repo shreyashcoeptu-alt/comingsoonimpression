@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 720" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="filmGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#262626" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0E0E0E" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="tapeShadowRight" x="-20%" y="-10%" width="140%" height="130%">
+      <feDropShadow dx="8" dy="12" stdDeviation="12" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#tapeShadowRight)">
+    <!-- Curving Ribbon Path looping from top-right down along the right flank -->
+    <path d="M120,-30 C130,120 220,240 320,380 C390,480 340,620 280,740 L370,750 C440,610 480,450 400,330 C300,190 220,90 210,-20 Z" fill="url(#filmGradRight)" stroke="#D4AF37" stroke-width="3"/>
+
+    <!-- Left Sprocket Track -->
+    <path d="M135,-20 C145,130 235,250 335,390 C405,490 355,630 295,735" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="5" stroke-dasharray="8 12" fill="none"/>
+    
+    <!-- Right Sprocket Track -->
+    <path d="M195,-10 C205,100 285,200 385,340 C465,460 425,600 355,745" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="5" stroke-dasharray="8 12" fill="none"/>
+
+    <!-- Film Dividers & Frames -->
+    <path d="M140,40 L195,50 M165,130 L225,140 M205,220 L270,230 M255,310 L325,315 M310,400 L380,395 M360,490 L420,470 M345,580 L405,550 M315,670 L375,640" stroke="#E5A823" stroke-width="3" stroke-opacity="0.75"/>
+
+    <!-- Frame Window Cutouts -->
+    <polygon points="148,55 200,65 210,125 158,115" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="175,145 235,155 250,215 190,205" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="218,235 285,245 305,305 240,295" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="270,325 340,330 365,390 295,385" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="325,410 395,405 410,465 342,475" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="358,495 418,475 405,540 345,565" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+  </g>
+</svg>

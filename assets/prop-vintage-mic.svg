@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" width="100%" height="100%" fill="none">
+  <defs>
+    <filter id="micShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+  <g filter="url(#micShadow)">
+    <!-- White Sticker Backing -->
+    <path d="M60,40 C60,20 140,20 140,40 L140,110 C140,130 125,145 108,148 L108,195 L145,215 C150,218 145,230 135,230 L65,230 C55,230 50,218 55,215 L92,195 L92,148 C75,145 60,130 60,110 Z" fill="#F4E8D0" stroke="#180507" stroke-width="3.5"/>
+
+    <!-- Chrome Outer Mic Head -->
+    <rect x="70" y="30" width="60" height="85" rx="28" fill="#1C1C1C" stroke="#111" stroke-width="3"/>
+    
+    <!-- Grille Slots -->
+    <line x1="82" y1="45" x2="118" y2="45" stroke="#E5A823" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="78" y1="58" x2="122" y2="58" stroke="#E5A823" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="76" y1="71" x2="124" y2="71" stroke="#E5A823" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="78" y1="84" x2="122" y2="84" stroke="#E5A823" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="82" y1="97" x2="118" y2="97" stroke="#E5A823" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="100" y1="35" x2="100" y2="110" stroke="#FBD34D" stroke-width="2"/>
+
+    <!-- U-Shaped Metal Mount -->
+    <path d="M65,75 C65,130 135,130 135,75" stroke="#D4AF37" stroke-width="4" stroke-linecap="round" fill="none"/>
+    <circle cx="65" cy="75" r="4" fill="#111"/>
+    <circle cx="135" cy="75" r="4" fill="#111"/>
+
+    <!-- Stem & Base Stand -->
+    <rect x="96" y="125" width="8" height="75" fill="#222" stroke="#111" stroke-width="1.5"/>
+    <ellipse cx="100" cy="205" rx="35" ry="12" fill="#1E0709" stroke="#180507" stroke-width="3"/>
+    <ellipse cx="100" cy="203" rx="25" ry="7" fill="#9C161D" stroke="#D4AF37" stroke-width="1.5"/>
+  </g>
+</svg>

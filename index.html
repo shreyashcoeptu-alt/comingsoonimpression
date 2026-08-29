@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressions 2026</title>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="Official Coming Soon page for COEP Technological University's 11th Edition Annual Cultural Festival — Impressions '26. By the artist, for the artist. A grand retro Bollywood cinema stage awaits.">
+  <meta name="keywords"
+    content="COEP, Impressions 2026, Impressions '26, Cultural Fest, Pune, College Fest, Bollywood, Cinema Ticket, Music, Dance, Drama, Art, Literature">
+  <meta name="author" content="COEP Impressions Team">
+  <meta name="theme-color" content="#841117">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Impressions '26 — Coming Soon | COEP Technological University Pune">
+  <meta property="og:description"
+    content="The curtain's about to rise! Claim your front-row seat to the 11th edition of COEP's grand annual cultural extravaganza.">
+  <meta property="og:image" content="assets/bg-bollywood-poster.png">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Impressions '26 — Coming Soon | COEP">
+  <meta name="twitter:description"
+    content="By the artist, for the artist. COEP's Annual Cultural Fest is back for its 11th Edition.">
+  <meta name="twitter:image" content="assets/bg-bollywood-poster.png">
+
+  <!-- Preconnect and Google Fonts fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Cinzel:wght@700;900&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Rozha+One&family=Rye&family=Space+Grotesk:wght@500;700&family=Special+Elite&display=swap"
+    rel="stylesheet">
+
+  <link rel="preload" as="image" href="assets/bg-bollywood-poster.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Ambient Vintage Cinema Layers -->
+  <div class="vintage-grain-overlay" aria-hidden="true"></div>
+  <div class="projector-beam-overlay" aria-hidden="true"></div>
+  <div class="vignette-overlay" aria-hidden="true"></div>
+
+  <!-- Floating Sparkles / Cinema Dust -->
+  <div class="floating-dust-particle p1"></div>
+  <div class="floating-dust-particle p2"></div>
+  <div class="floating-dust-particle p3"></div>
+  <div class="floating-dust-particle p4"></div>
+
+  <!-- Top Sweeping Film Tape Ribbon passing through top of the webpage -->
+  <div class="film-tape-top-wrapper" aria-hidden="true">
+    <img src="assets/film-ribbon-top.svg" alt="" class="film-tape-top-img">
+  </div>
+
+  <!-- Right Flank Curving Film Tape -->
+  <div class="film-tape-right-wrapper" aria-hidden="true">
+    <img src="assets/film-ribbon-right.svg" alt="" class="film-tape-right-img">
+  </div>
+
+  <!-- Bottom Flank Curving Film Tape -->
+  <div class="film-tape-bottom-wrapper" aria-hidden="true">
+    <img src="assets/film-ribbon-bottom.svg" alt="" class="film-tape-bottom-img">
+  </div>
+
+  <!-- Theatrical Props Layer flanking the Left and Right of the Ticket -->
+  <div class="cinema-props-layer" aria-hidden="true" id="stagePropsLayer">
+    <!-- LEFT SIDE PROPS -->
+    <!-- Handheld Megaphone with Sound Droplets (Top-Left) -->
+    <div class="stage-prop prop-megaphone-left">
+      <img src="assets/prop-megaphone-hand.svg" alt="Retro Megaphone with Sound Waves" class="prop-svg-img">
+    </div>
+
+    <!-- Vintage Studio Broadcast Microphone (Lower-Left) -->
+    <div class="stage-prop prop-mic-left">
+      <img src="assets/prop-vintage-mic.svg" alt="Vintage Studio Microphone" class="prop-svg-img">
+    </div>
+
+    <!-- RIGHT SIDE PROPS -->
+    <!-- Vintage Loudspeaker Horn with Lightning (Top-Right) -->
+    <div class="stage-prop prop-speaker-right">
+      <img src="assets/prop-loudspeaker.svg" alt="Retro Loudspeaker Horn" class="prop-svg-img">
+    </div>
+
+    <!-- Vintage 35mm Movie Camera on Tripod (Lower-Right) -->
+    <div class="stage-prop prop-camera-right">
+      <img src="assets/prop-vintage-camera.svg" alt="Vintage Cinema Camera" class="prop-svg-img">
+    </div>
+  </div>
+
+  <!-- Page Header / Cinema Proscenium Banner -->
+  <header class="cinema-header" id="pageHeader">
+    <div class="header-inner">
+      <!-- Sound & Mode Controls -->
+      <div class="header-controls">
+        <button type="button" class="ctrl-btn sound-toggle-btn" id="audioToggleBtn" title="Toggle Cinema Ambiance Sound"
+          aria-label="Toggle Cinema Projector Sound FX">
+          <span class="sound-icon-wrap" id="soundIcon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </span>
+          <span class="btn-label" id="soundLabel">SOUND OFF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Stage -->
+  <main class="hero-stage" id="heroStage">
+    <div class="stage-container">
+
+      <!-- Centerpiece 3D Ticket Component -->
+      <div class="ticket-3d-scene" id="ticket3dScene">
+        <div class="ticket-card-3d" id="ticketCard" role="region" aria-label="Impressions '26 Cinema Ticket Pass">
+
+          <!-- Ticket Surface -->
+          <div class="ticket-face ticket-face-front">
+            <!-- Ticket Left & Right Semicircular Perforation Notches -->
+            <div class="notch notch-left" aria-hidden="true"></div>
+            <div class="notch notch-right" aria-hidden="true"></div>
+
+            <div class="ticket-layout">
+              <!-- MAIN BODY OF THE TICKET -->
+              <div class="ticket-main-section">
+
+                <!-- Vintage Cinema University Header -->
+                <div class="ticket-crest-row">
+                  <div class="crest-side">
+                    <img src="assets/COEP-logo.webp" alt="COEP Crest" class="ticket-crest-logo">
+                    <div class="crest-details">
+                      <span class="uni-name-slab">COEP TECHNOLOGICAL UNIVERSITY PRESENTS</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Filmstrip Accent Ribbon with Sprocket Holes -->
+                <div class="filmstrip-accent-bar" aria-hidden="true">
+                  <div class="sprocket-track">
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                  </div>
+                  <div class="filmstrip-label">11TH EDITION OF OUR ANNUAL CULTURAL FESTIVAL!</div>
+                  <div class="sprocket-track">
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                    <span class="sprocket"></span><span class="sprocket"></span><span class="sprocket"></span>
+                  </div>
+                </div>
+
+                <!-- Hero Title: IMPRESSIONS '26 -->
+                <div class="ticket-title-block">
+                  <h1 class="ticket-hero-title" aria-label="Impressions 26">
+                    <span class="hero-wordmark">IMPRESSIONS</span>
+                    <span class="hero-year-tag">’26</span>
+                  </h1>
+                  <p class="ticket-hero-tagline">by the artist, for the artist</p>
+                </div>
+
+                <!-- Dashed Details Field Block -->
+                <div class="ticket-data-grid">
+                  <div class="data-cell">
+                    <span class="cell-label">VENUE:</span>
+                    <span class="cell-value">COEP MAIN CAMPUS, PUNE</span>
+                  </div>
+                  <div class="data-cell">
+                    <span class="cell-label">DATE & TIME:</span>
+                    <span class="cell-value date-highlight">TBA · CURTAIN RAISES SOON</span>
+                  </div>
+                  <div class="data-cell">
+                    <span class="cell-label">PASS TIER:</span>
+                    <span class="cell-value">ALL-ACCESS CULTURAL PASS</span>
+                  </div>
+                  <div class="data-cell">
+                    <span class="cell-label">CERTIFICATE:</span>
+                    <span class="cell-value">U/A · ALL ARTISTS WELCOME</span>
+                  </div>
+                </div>
+
+                <!-- Dynamic Status Footer inside Ticket (Looping Film Reel + Coming Soon) -->
+                <div class="ticket-status-footer">
+                  <div class="coming-soon-reel-lockup">
+                    <!-- Animated Looping Film Reel Sprocket SVG -->
+                    <div class="film-reel-spinner" aria-hidden="true">
+                      <svg viewBox="0 0 100 100" class="reel-svg">
+                        <circle cx="50" cy="50" r="44" stroke="var(--gold-bright)" stroke-width="4" fill="none"
+                          stroke-dasharray="8 6" />
+                        <circle cx="50" cy="50" r="28" fill="#180406" stroke="var(--gold-gold)" stroke-width="2" />
+                        <!-- 6 Film Reel Cutout Spokes -->
+                        <circle cx="50" cy="30" r="7" fill="var(--gold-bright)" />
+                        <circle cx="67" cy="40" r="7" fill="var(--gold-bright)" />
+                        <circle cx="67" cy="60" r="7" fill="var(--gold-bright)" />
+                        <circle cx="50" cy="70" r="7" fill="var(--gold-bright)" />
+                        <circle cx="33" cy="60" r="7" fill="var(--gold-bright)" />
+                        <circle cx="33" cy="40" r="7" fill="var(--gold-bright)" />
+                        <circle cx="50" cy="50" r="8" fill="#24070A" stroke="var(--parchment-cream)" stroke-width="2" />
+                        <circle cx="50" cy="50" r="3" fill="var(--gold-bright)" />
+                      </svg>
+                    </div>
+
+                    <div class="status-text-stack">
+                      <span class="status-pill-badge">STAGE PREPARATIONS LIVE</span>
+                      <span class="coming-soon-text">COMING SOON</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- PERFORATION TEAR DIVIDER -->
+              <div class="ticket-perforation-divider" aria-hidden="true">
+                <div class="perforation-dashed-line"></div>
+                <div class="perforation-scissors">✂</div>
+              </div>
+
+              <!-- ADMIT ONE STUB SECTION -->
+              <div class="ticket-stub-section">
+                <!-- Top Notch & Header -->
+                <div class="stub-header">
+                  <div class="stub-stars">★★★</div>
+                  <div class="stub-admit-text">ADMIT ONE</div>
+                  <div class="stub-stars">★★★</div>
+                </div>
+
+                <div class="stub-edition-box">
+                  <span class="stub-box-title">EDITION</span>
+                  <span class="stub-box-num">11</span>
+                </div>
+
+                <!-- Impressions Logo Block -->
+                <div class="stub-logo-block">
+                  <img src="assets/impressions-text-logo.png" alt="Impressions" class="stub-impressions-logo">
+                </div>
+
+                <div class="stub-fields">
+                  <div class="stub-row">
+                    <span class="s-k">GATE:</span>
+                    <span class="s-v">MAIN</span>
+                  </div>
+                  <div class="stub-row">
+                    <span class="s-k">ROW:</span>
+                    <span class="s-v">FRONT</span>
+                  </div>
+                  <div class="stub-row">
+                    <span class="s-k">SEAT:</span>
+                    <span class="s-v">VIP-01</span>
+                  </div>
+                </div>
+
+                <div class="stub-date-stamp">
+                  <span class="stamp-lbl">ISSUE DATE</span>
+                  <span class="stamp-val">COMING SOON</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Specular Sheen Effect on 3D Tilt -->
+            <div class="ticket-sheen-glare" aria-hidden="true"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Page Footer -->
+  <footer class="cinema-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="assets/Foot_logo_red.png" alt="Impressions Footprint Crest" class="footer-emblem-img">
+        <div class="footer-copy-block">
+          <span class="f-title">COEP IMPRESSIONS '26</span>
+          <span class="f-sub">Annual Cultural Festival · COEP Technological University Pune</span>
+        </div>
+      </div>
+
+      <!-- Social Media Icons (Vintage Bollywood Cinema Style) -->
+      <div class="footer-social-links" aria-label="Official Social Channels">
+        <a href="https://www.instagram.com/impressions_coep/" target="_blank" rel="noopener noreferrer"
+          class="social-badge" title="Follow Impressions on Instagram">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+          <span class="s-name">Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/@COEPImpressions" target="_blank" rel="noopener noreferrer"
+          class="social-badge" title="Watch on YouTube">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          <span class="s-name">YouTube</span>
+        </a>
+        <a href="https://www.linkedin.com/company/impressions-coep/posts/" target="_blank" rel="noopener noreferrer"
+          class="social-badge" title="Connect on LinkedIn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path
+              d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+          </svg>
+          <span class="s-name">LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cinema Toast Notification -->
+  <div class="cinema-toast" id="cinemaToast" role="alert" aria-live="assertive"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>

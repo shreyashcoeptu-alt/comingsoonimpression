@@ -1,0 +1,13 @@
+{
+  "name": "impressions-2026-coming-soon",
+  "version": "1.0.0",
+  "description": "COEP Impressions '26 Coming Soon Page ",
+  "scripts": {
+    "dev": "npx -y serve -l 8080 .",
+    "start": "npx -y serve -l 8080 .",
+    "serve": "npx -y serve -l 8080 ."
+  },
+  "keywords": ["coep", "impressions", "bollywood", "ticket", "coming-soon"],
+  "author": "COEP Impressions Web Team",
+  "license": "ISC"
+}

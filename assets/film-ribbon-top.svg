@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 320" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="filmGradTop" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141414" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#282828" stop-opacity="0.88"/>
+      <stop offset="100%" stop-color="#101010" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="tapeShadowTop" x="-10%" y="-10%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.75"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#tapeShadowTop)">
+    <!-- Top Sweeping 35mm Filmstrip Ribbon -->
+    <path d="M-80,-20 C250,80 500,160 850,110 C1080,75 1250,-10 1480,-40 L1460,70 C1230,105 1060,195 830,225 C480,270 230,190 -100,90 Z" fill="url(#filmGradTop)" stroke="#D4AF37" stroke-width="2.5"/>
+    
+    <!-- Top Sprocket Rail -->
+    <path d="M-75,-5 C255,95 505,175 855,125 C1085,90 1255,5 1475,-25" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="5" stroke-dasharray="8 12" fill="none"/>
+    
+    <!-- Bottom Sprocket Rail -->
+    <path d="M-95,75 C235,175 485,255 835,210 C1065,180 1235,90 1455,55" stroke="#FFFFFF" stroke-opacity="0.85" stroke-width="5" stroke-dasharray="8 12" fill="none"/>
+
+    <!-- Film Frame Dividers -->
+    <path d="M60,35 L40,115 M180,65 L160,145 M300,95 L280,175 M420,120 L400,200 M540,135 L520,215 M660,140 L640,220 M780,130 L760,210 M900,110 L880,190 M1020,85 L1000,165 M1140,55 L1120,135 M1260,25 L1240,105 M1380,-5 L1360,75" stroke="#E5A823" stroke-width="3" stroke-opacity="0.75"/>
+
+    <!-- Frame Window Cutouts -->
+    <polygon points="75,40 165,68 145,140 55,110" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="195,70 285,98 265,170 175,140" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="315,100 405,123 385,195 295,170" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="435,123 525,138 505,210 415,195" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="555,138 645,142 625,215 535,210" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="675,140 765,132 745,205 655,215" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="795,128 885,110 865,185 775,205" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="915,108 1005,82 985,160 895,182" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="1035,80 1125,52 1105,130 1015,158" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+    <polygon points="1155,50 1245,22 1225,100 1135,128" fill="#0A0A0A" fill-opacity="0.6" stroke="#444" stroke-width="1.5"/>
+  </g>
+</svg>
