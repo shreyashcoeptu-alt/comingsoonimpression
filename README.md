@@ -140,7 +140,7 @@ Stay tuned for official event dates, pass releases, and artist line-ups:
 - 📷 **Instagram**: [@impressions_coep](https://www.instagram.com/impressions_coep/)
 - 🎥 **YouTube**: [@COEPImpressions](https://www.youtube.com/@COEPImpressions)
 - 💼 **LinkedIn**: [COEP Impressions](https://www.linkedin.com/company/impressions-coep/)
-- 🏛️ **University**: [COEP Technological University, Pune](https://www.coep.org.in/)
+- 🏛️ **University**: [COEP Technological University, Pune](https://www.coeptech.ac.in/)
 
 ---
 
