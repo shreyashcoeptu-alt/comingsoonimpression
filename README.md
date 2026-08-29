@@ -1,4 +1,4 @@
-# 🎬 COEP Impressions '26 — Coming Soon
+# 🎬 COEP Impressions '26 (Coming Soon)
 
 <div align="center">
 
