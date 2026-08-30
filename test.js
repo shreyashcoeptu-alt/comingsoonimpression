@@ -81,6 +81,14 @@ test('CSS Styling & Asset Verification', async (t) => {
   await t.test('Contains responsive & accessibility media queries', () => {
     assert.ok(css.includes('prefers-reduced-motion'), 'Contains prefers-reduced-motion query');
     assert.ok(css.includes('@media'), 'Contains responsive media queries');
+    assert.ok(css.includes('(max-width: 768px)'), 'Contains 768px breakpoint');
+    assert.ok(css.includes('(max-width: 480px)'), 'Contains 480px phone breakpoint');
+  });
+
+  await t.test('Mobile layout optimizations for footer and filmstrip', () => {
+    assert.ok(css.includes('.filmstrip-accent-bar'), 'Contains filmstrip ribbon styling');
+    assert.ok(css.includes('white-space: nowrap'), 'Filmstrip label uses nowrap to prevent awkward wrapping');
+    assert.ok(css.includes('overflow: hidden'), 'Filmstrip tracks use overflow hidden');
   });
 
   await t.test('All CSS url(...) assets exist on disk', () => {
