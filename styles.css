@@ -543,7 +543,7 @@ body {
 }
 
 .ticket-hero-tagline {
-  font-family: var(--font-script);
+  font-family: 'Courgette', cursive;
   font-style: italic;
   font-size: clamp(1.15rem, 2.2vw, 1.45rem);
   color: var(--ink-soft);
