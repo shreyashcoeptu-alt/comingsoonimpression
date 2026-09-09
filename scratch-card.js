@@ -20,7 +20,7 @@
 
     // Detect primary input device for initial hint text
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    const hintLabel = isTouchDevice ? 'Scratch to reveal' : 'Scratch / Hover to reveal';
+    const hintLabel = isTouchDevice ? 'Scratch to reveal' : 'Scratch to reveal';
 
     // Build overlay container
     const overlay = document.createElement('div');
@@ -238,6 +238,9 @@
     // -------------------------------------------------------------------------
     overlay.addEventListener('pointerdown', (e) => {
       if (isRevealed) return;
+      if (e.cancelable && (e.pointerType === 'touch' || e.pointerType === 'pen')) {
+        e.preventDefault();
+      }
       isScratching = true;
       lastPoint = null;
       try {
@@ -252,6 +255,7 @@
       // On touch devices: only erase when finger is pressed down
       if (e.pointerType === 'touch' || e.pointerType === 'pen') {
         if (isScratching) {
+          if (e.cancelable) e.preventDefault();
           eraseAt(e.clientX, e.clientY);
         }
       } else {
